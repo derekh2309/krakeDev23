@@ -10,7 +10,7 @@ calcularValorTotal = function () {
     let valorDescuento;
     let valorIVA;
     let valorTotal;
-
+    let resumen
     //1. Recuperar el nombre del producto como String
     nombreProducto=document.getElementById("txtProducto").value;
     //2. Recuperar el precio como float
@@ -89,6 +89,8 @@ calcularValorTotal = function () {
             Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
         Si funciona, hacer un commit
     */
+   resumen= "Valor a pagar por " + cantidad + " " + nombreProducto +  " con " + porcentajeDescuento + "% de descuento: USD " + valorTotal;
+   mostrarTexto("lblResumen", resumen);
 }
 limpiar = function () {
     /*
@@ -96,5 +98,14 @@ limpiar = function () {
         Dejar todos los textos de los montos con el valor 0.0
         Si funciona, hacer un commit
      */
+    document.getElementById("txtProducto").value="";
+    document.getElementById("txtCantidad").value="0";
+    document.getElementById("txtPrecio").value="0";
+    document.getElementById("txtPorcentajeDescuento").value="0";
+
+    mostrarTexto("lblSubtotal","0.0");
+    mostrarTexto("lblDescuento","0.0");
+    mostrarTexto("lblValorIVA","0.0");
+    mostrarTexto("lblTotal","0.0")
 }
 /* SI TODO FUNCIONA, HACER UN PUSH */
