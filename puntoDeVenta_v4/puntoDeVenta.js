@@ -66,6 +66,7 @@ calcularValorTotal = function () {
         */
        mostrarTexto("lblValorIVA", valorIVA.toFixed(2));
     //10. Invocar a calcularTotal y lo que devuelve guardar en la variable valorTotal
+    valorTotal = calcularTotal(valorSubtotal, valorDescuento, valorIVA)
     //11. Mostrar el resultado en el componente lblTotal
     /*
         Caso de prueba: 
@@ -81,14 +82,13 @@ calcularValorTotal = function () {
 
                 Si el caso de prueba es exitoso, hacer un commit
        */
-            
+      mostrarTexto("lblTotal", valorTotal.toFixed(2));   
     //12. Mostrar un resumen en el componente lblResumen, si no existe debe agregarlo
     /*
         Ejemplo: 
             Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
         Si funciona, hacer un commit
     */
-
 }
 limpiar = function () {
     /*
