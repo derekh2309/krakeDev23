@@ -5,11 +5,18 @@ calcularPromedioNotas=function(){
     let promedio = calcularPromedio(nota1, nota2, nota3);
     let img = document.getElementById("imgResultado")
     document.getElementById("resultado").innerText = "El promedio es: " + promedio.toFixed(2);
-    if (promedio > 7){
-        img.src ="./imagenes/Aprobado.gif";
-    }
-    else{
-        img.src = "./imagenes/Reprobado.gif";
+    if (promedio < 5 && promedio > 0){
+        mensaje = "Reprobado";
+        img.src ="./imagenes/Reprobado.gif";
+    }else if(promedio >=5 && promedio<=8){
+        mensaje = "Buen Trabajo";
+        img.src = "./imagenes/Buen Trabajo.gif";
+    }else if(promedio > 8 && promedio<=10){
+        mensaje = "Excelente"
+        img.src = "./imagenes/Aprobado.gif"
+    }else{
+        mensaje = "Datos Incorrectos"
+        img.src = "./imagenes/Incorrecto.gif"
     }
 }
 
